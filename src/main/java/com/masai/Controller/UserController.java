@@ -30,10 +30,10 @@ public class UserController {
 
     }
 	
-	@PostMapping("/userlogout")
-    public String logoutUserHandler(@RequestParam(required = false) String key) throws UserException {
-        
-		return userService.logOutFromAccount(key);
+	@DeleteMapping("/userlogout/{key}")
+    public ResponseEntity<String> logoutUserHandler(@PathVariable("key") String key) throws UserException {
+        String msg = userService.logOutFromAccount(key);
+	 return new ResponseEntity<>(msg, HttpStatus.OK);
 
     }
 
