@@ -52,6 +52,14 @@ public class CartServiceImpl implements CartService{
 		if(stock.isEmpty()) {
 				throw new VegetableException("Not found vegetable");
 		}
+		
+		List<VegetableDTO> listVeg=cart.getVegetable();
+		for(VegetableDTO vgd:listVeg){
+			if(vgd.getVegId()==vegId){
+				throw new VegetableException("Product is already added into cart");
+			}
+		}
+
 			Vegetable vegsto = stock.get();
 			if(vegsto.getQuantity() > 0) {
 				vegsto.setQuantity(vegsto.getQuantity()-1);
