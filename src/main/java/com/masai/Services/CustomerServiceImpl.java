@@ -135,7 +135,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	@Override
 	public Customer updatePassword(String email, String phone, String password) throws CustomerException, UserException {
-		Customer customer=customerDao.findByEmailIdAndMobileNumbe(email,phone);
+		Customer customer=customerDao.findByEmailIdAndMobileNumber(email,phone);
 		if(customer==null){
 			throw  new UserException("Please enter correct details");
 		}
