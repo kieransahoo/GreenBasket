@@ -20,5 +20,7 @@ public interface CustomerService {
 	public Customer updateCustomer(Customer customer,String key)throws CustomerException,UserException;
 	
 	public Customer removeCustomer(Integer customerId,String key) throws CustomerException,UserException;
+	
+	public Customer updatePassword(String email,String phone,String password) throws CustomerException,UserException;
 
 }
