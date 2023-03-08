@@ -61,6 +61,15 @@ public class CustomerController {
 		
 	}
 	
+	@PutMapping("/customer/{emailId}/{phone}/{password}")
+	public ResponseEntity<Customer> updateCustomerPasswordHandler(@PathVariable("emailId") String emailId, @PathVariable("phone") String phone,@PathVariable("password") String password) throws CustomerException, UserException{
+
+		Customer updatedCustomer = customerService.updatePassword(emailId, phone,password);
+
+		return new ResponseEntity<Customer>(updatedCustomer,HttpStatus.OK);
+
+	}
+	
 	@DeleteMapping("/customer/{id}/{key}")
 	public ResponseEntity<Customer> removeAdminHandler(@PathVariable("id") Integer customerId,@PathVariable("key") String key) throws CustomerException, UserException{
 		
