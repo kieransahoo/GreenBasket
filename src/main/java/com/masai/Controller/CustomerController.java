@@ -35,7 +35,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customer/{id}/{key}")
-	public ResponseEntity<Customer> viewAdminHandler(@PathVariable("id") Integer customerId,@PathVariable("key") String key) throws CustomerException, UserException{
+	public ResponseEntity<Customer> viewCustomerHandler(@PathVariable("id") Integer customerId,@PathVariable("key") String key) throws CustomerException, UserException{
 		
 		Customer customer = customerService.viewCustomer(customerId, key);
 		
@@ -53,7 +53,7 @@ public class CustomerController {
 	
 	
 	@PutMapping("/customer/{key}")
-	public ResponseEntity<Customer> updateAdminHandler(@RequestBody Customer customer,@PathVariable String key) throws CustomerException, UserException{
+	public ResponseEntity<Customer> updateCustomerHandler(@RequestBody Customer customer,@PathVariable String key) throws CustomerException, UserException{
 		
 		Customer updatedCustomer = customerService.updateCustomer(customer, key);
 		
@@ -71,7 +71,7 @@ public class CustomerController {
 	}
 	
 	@DeleteMapping("/customer/{id}/{key}")
-	public ResponseEntity<Customer> removeAdminHandler(@PathVariable("id") Integer customerId,@PathVariable("key") String key) throws CustomerException, UserException{
+	public ResponseEntity<Customer> removeCustomerHandler(@PathVariable("id") Integer customerId,@PathVariable("key") String key) throws CustomerException, UserException{
 		
 		Customer customer = customerService.removeCustomer(customerId, key);
 

@@ -3,15 +3,11 @@ package com.masai.Services;
 import java.util.List;
 import java.util.Optional;
 
-import com.masai.Exception.CustomerException;
-import com.masai.Exception.UserException;
+import com.masai.Exception.*;
 import com.masai.Model.*;
 import com.masai.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.masai.Exception.CartException;
-import com.masai.Exception.VegetableException;
 
 @Service
 public class CartServiceImpl implements CartService{
@@ -274,6 +270,36 @@ public class CartServiceImpl implements CartService{
 			throw new CartException("No items added yet");
 		}
 		return list.size();
+
 	}
+
+	@Override
+	public Double totalPrice(String key) throws CartException, UserException, CustomerException {
+		CurrentUserSession currentUserSession = userSessionDao.findByUuid(key);
+
+		if(currentUserSession.equals(null) || currentUserSession.getRole()!=2) {
+			throw new UserException("Invalid session Id or not Logged In");
+		}
+
+		Customer customer = customerDao.findById(currentUserSession.getId()).orElseThrow(()-> new CustomerException("Customer not exists with Id"));
+
+		Cart cd=customer.getCart();
+
+		List<VegetableDTO> lists=cd.getVegetable();
+
+		if(lists.isEmpty()){
+			throw new OrderException("Please add atleast 1 order");
+		}
+
+		Double totalPrice=0.0;
+
+
+		for(VegetableDTO  c : lists) {
+			totalPrice += c.getPrice()*c.getQuantity();
+		}
+
+		return totalPrice;
+	}
+
 
 }

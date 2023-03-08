@@ -64,5 +64,12 @@ public class CartController {
 		Integer count = cartservice.viewVegCountInCart(key);
 		return new ResponseEntity<>(count,HttpStatus.ACCEPTED);
 	}
+
+	@GetMapping("getTotalAmount/{key}")
+	public ResponseEntity<Double> totalPriceHandller(@PathVariable String key) throws CustomerException, UserException {
+
+		Double amount = cartservice.totalPrice(key);
+		return new ResponseEntity<>(amount,HttpStatus.ACCEPTED);
+	}
 	
 }

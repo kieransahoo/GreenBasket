@@ -25,4 +25,6 @@ public interface CartService {
 
 	public Integer viewVegCountInCart(String key) throws VegetableException,UserException, CustomerException;
 
+	public Double totalPrice(String key)throws CartException,UserException,CustomerException;
+
 }
