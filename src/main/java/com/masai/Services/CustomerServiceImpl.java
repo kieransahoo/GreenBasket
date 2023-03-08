@@ -132,5 +132,17 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return customer.get();
 	}
+	
+	@Override
+	public Customer updatePassword(String email, String phone, String password) throws CustomerException, UserException {
+		Customer customer=customerDao.findByEmailIdAndMobileNumbe(email,phone);
+		if(customer==null){
+			throw  new UserException("Please enter correct details");
+		}
+
+		customer.setPassword(password);
+		return customerDao.save(customer);
+
+	}
 
 }
