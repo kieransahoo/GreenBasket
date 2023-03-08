@@ -51,6 +51,7 @@ public class UserLoginServiceImpl implements UserLoginService{
 			Optional<CurrentUserSession> validCustomerSessionOpt = userSessionDao.findById(existingCustomer.getCustomerId());
 
 			if(validCustomerSessionOpt.isPresent()) {
+
 				throw new UserException("User already logged In with this email");
 			}
 
@@ -74,6 +75,7 @@ public class UserLoginServiceImpl implements UserLoginService{
 			Optional<CurrentUserSession> validCustomerSessionOpt = userSessionDao.findById(existingAdmin.getAdminId());
 
 			if(validCustomerSessionOpt.isPresent()) {
+
 				throw new UserException("User already logged In with this email");
 			}
 
