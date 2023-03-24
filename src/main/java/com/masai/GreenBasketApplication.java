@@ -8,6 +8,7 @@ public class GreenBasketApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GreenBasketApplication.class, args);
+	
 	}
 
 }

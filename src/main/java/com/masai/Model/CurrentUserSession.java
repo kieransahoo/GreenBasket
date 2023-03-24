@@ -24,7 +24,51 @@ public class CurrentUserSession {
 
 	private Integer role;
 
+	public CurrentUserSession() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-	
+	public CurrentUserSession(Integer id, String uuid, LocalDateTime localDateTime, Integer role) {
+		super();
+		this.id = id;
+		this.uuid = uuid;
+		this.localDateTime = localDateTime;
+		this.role = role;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public LocalDateTime getLocalDateTime() {
+		return localDateTime;
+	}
+
+	public void setLocalDateTime(LocalDateTime localDateTime) {
+		this.localDateTime = localDateTime;
+	}
+
+	public Integer getRole() {
+		return role;
+	}
+
+	public void setRole(Integer role) {
+		this.role = role;
+	}
+
+
 
 }
