@@ -40,11 +40,6 @@ public class Order {
 	@Embedded
 	private List<VegetableDTO> vegetableList=new ArrayList<>();
 
-
-
-
-	
-
 //	private Integer customerId;
 
 	
