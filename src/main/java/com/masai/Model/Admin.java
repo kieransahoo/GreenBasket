@@ -26,63 +26,7 @@ public class Admin {
 
 	final private Integer role=1;
 
-	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public Admin(Integer adminId, String adminName, String contactNumber, String emailId, String password) {
-		super();
-		this.adminId = adminId;
-		this.adminName = adminName;
-		this.contactNumber = contactNumber;
-		this.emailId = emailId;
-		this.password = password;
-	}
-
-	public Integer getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(Integer adminId) {
-		this.adminId = adminId;
-	}
-
-	public String getAdminName() {
-		return adminName;
-	}
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
-	}
-
-	public String getContactNumber() {
-		return contactNumber;
-	}
-
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
-	}
-
-	public String getEmailId() {
-		return emailId;
-	}
-
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Integer getRole() {
-		return role;
-	}
 	
 
 	
