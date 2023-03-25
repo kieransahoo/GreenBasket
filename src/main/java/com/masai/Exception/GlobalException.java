@@ -29,6 +29,7 @@ public class GlobalException {
 		me.setDetails(req.getDescription(false));
 		me.setMessage(ie.getMessage());
 		return new ResponseEntity<>(me,HttpStatus.BAD_REQUEST);
+		
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
