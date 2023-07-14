@@ -1,2 +1,1 @@
-# GreenBasketDeployment
-Deployment of SpringBoot Project 
+//Full Stack GreenBasket Application
