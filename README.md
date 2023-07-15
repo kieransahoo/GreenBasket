@@ -68,15 +68,15 @@ An online vegetable sales application allows customers to easily purchase fresh,
 --------------------------------------------------------------------------------
 ## Contributors
 --------------------------------------------------------------------------------
-*<a href="https://github.com/mynkgupta22">Mayank Gupta</a>
-<br>
-*<a href="https://github.com/kieransahoo">Kieran Sahoo</a>
-<br>
-*<a href="https://github.com/mynkgupta22">Nitesh Pal</a>
-<br>
-*<a href="https://github.com/mynkgupta22">Sadanand Mare</a>
-<br>
-*<a href="https://github.com/mynkgupta22">Santosh Kumar</a>
+- <a href="https://github.com/mynkgupta22">Mayank Gupta</a>
+
+- <a href="https://github.com/kieransahoo">Kieran Sahoo</a>
+
+- <a href="https://github.com/mynkgupta22">Nitesh Pal</a>
+
+- <a href="https://github.com/mynkgupta22">Sadanand Mare</a>
+
+- <a href="https://github.com/mynkgupta22">Santosh Kumar</a>
 
 
 ## Installation & Run
