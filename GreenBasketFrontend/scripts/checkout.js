@@ -13,7 +13,7 @@ let id = user[0].id;
 var customer;
 getdata();
 async function getdata(){
-    let res = await fetch(`https://greenbasketdeployment-production.up.railway.app/customer/${id}/${key}`)
+    let res = await fetch(`http://localhost:8083/customer/${id}/${key}`)
     customer = await res.json()
     console.log(customer);
     setAddressInForm(customer)
@@ -50,7 +50,7 @@ let countRequestOptions = {
   redirect: 'follow'
 };
 
-fetch(`https://greenbasketdeployment-production.up.railway.app/count/${key}`, countRequestOptions)
+fetch(`http://localhost:8083/count/${key}`, countRequestOptions)
   .then(response => response.text())
   .then(count => {
 
@@ -75,7 +75,7 @@ fetch(`https://greenbasketdeployment-production.up.railway.app/count/${key}`, co
    redirect: 'follow'
  };
  
- fetch(`https://greenbasketdeployment-production.up.railway.app/getTotalAmount/${key}`, subTotalRequestOptions)
+ fetch(`http://localhost:8083/getTotalAmount/${key}`, subTotalRequestOptions)
    .then(response => response.text())
    .then(result => {
      console.log(result)
@@ -124,7 +124,7 @@ fetch(`https://greenbasketdeployment-production.up.railway.app/count/${key}`, co
         redirect: 'follow'
         };
 
-        fetch(`https://greenbasketdeployment-production.up.railway.app/BillingService/addBill/${key}`, billRequestOptions)
+        fetch(`http://localhost:8083/BillingService/addBill/${key}`, billRequestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -139,7 +139,7 @@ fetch(`https://greenbasketdeployment-production.up.railway.app/count/${key}`, co
         redirect: 'follow'
         };
 
-        fetch(`https://greenbasketdeployment-production.up.railway.app/order/${key}`, orderRequestOptions)
+        fetch(`http://localhost:8083/order/${key}`, orderRequestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result);
@@ -168,7 +168,7 @@ fetch(`https://greenbasketdeployment-production.up.railway.app/count/${key}`, co
       redirect: 'follow'
     };
     
-    fetch(`https://greenbasketdeployment-production.up.railway.app/userlogout/${key}`, logoutRequestOptions)
+    fetch(`http://localhost:8083/userlogout/${key}`, logoutRequestOptions)
       .then(response => response.text())
       .then(result => {
         console.log(result);

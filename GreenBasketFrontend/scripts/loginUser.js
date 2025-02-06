@@ -13,8 +13,8 @@ async function loginUser(event){
     var email = document.getElementById('userEmail').value;
     var password = document.getElementById('userPassword').value;
 
-
-postAPI('https://greenbasketdeployment-production.up.railway.app/userlogin', {
+// http://127.0.0.1:5500/userLogin.html
+postAPI('http://localhost:8083/userlogin', {
     emailId:email,
     password:password
 });

@@ -29,7 +29,7 @@ async function registerAdmin(event){
       redirect: 'follow'
     };
     
-    fetch("https://greenbasketdeployment-production.up.railway.app/admin", requestOptions)
+    fetch("http://localhost:8083/admin", requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

@@ -8,7 +8,7 @@ let id = user[0].id;
 let orderdata;
 window.onload= getOrderData(key);
   async function getOrderData(key){
-    let res = await fetch(`https://greenbasketdeployment-production.up.railway.app/customer/all/${key}`)
+    let res = await fetch(`http://localhost:8083/customer/all/${key}`)
     orderdata = await res.json()
     console.log(orderdata);
    
@@ -69,7 +69,7 @@ async function userLogout(event){
     redirect: 'follow'
   };
   
-  fetch(`https://greenbasketdeployment-production.up.railway.app/userlogout/${key}`, logoutRequestOptions)
+  fetch(`http://localhost:8083/userlogout/${key}`, logoutRequestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result);

@@ -37,7 +37,7 @@ if(user.length>0){
     console.log(user);
     key = user[0].uuid;
     
-    fetch(`https://greenbasketdeployment-production.up.railway.app/userlogout/${key}`, logoutRequestOptions)
+    fetch(`http://localhost:8083/userlogout/${key}`, logoutRequestOptions)
         .then(response => response.text())
         .then(result => {
         console.log(result);

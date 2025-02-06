@@ -11,7 +11,7 @@ console.log(key);
 let data;
 window.onload=getdata()
  async function getdata(){
-    let res = await fetch(`https://greenbasketdeployment-production.up.railway.app/vegetables`)
+    let res = await fetch(`http://localhost:8083/vegetables`)
     data = await res.json()
     console.log(data);
     console.log("yes");
@@ -134,7 +134,7 @@ window.onload=getdata()
 //   })
 //   .catch(error => console.log('error', error));
 
-fetch(`https://greenbasketdeployment-production.up.railway.app/vegetable/${key}`, requestOptions)
+fetch(`http://localhost:8083/vegetable/${key}`, requestOptions)
   .then(response => response.text())
   .then(result => {
     console.log(result);

@@ -47,7 +47,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://greenbasketdeployment-production.up.railway.app/customer", requestOptions)
+fetch("http://localhost:8083/customer", requestOptions)
   .then(response => response.text())
   .then(result => {
     alert("Customer registered")

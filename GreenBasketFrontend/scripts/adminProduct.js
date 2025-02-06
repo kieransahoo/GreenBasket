@@ -39,7 +39,7 @@ var requestOptions = {
 
 
 
-fetch(`https://greenbasketdeployment-production.up.railway.app/vegetable/${key}`, requestOptions)
+fetch(`http://localhost:8083/vegetable/${key}`, requestOptions)
   .then(response => response.text())
   .then(result => {
    console.log(result)
@@ -57,7 +57,7 @@ fetch(`https://greenbasketdeployment-production.up.railway.app/vegetable/${key}`
 let data;
 window.onload=getdata()
  async function getdata(){
-    let res = await fetch(`https://greenbasketdeployment-production.up.railway.app/vegetables`)
+    let res = await fetch(`http://localhost:8083/vegetables`)
     data = await res.json()
     console.log(data);
     console.log("yes");
@@ -118,7 +118,7 @@ window.onload=getdata()
       redirect: 'follow'
     };
     
-    fetch(`https://greenbasketdeployment-production.up.railway.app/vegetable/${id}/${key}`, requestOptions)
+    fetch(`http://localhost:8083/vegetable/${id}/${key}`, requestOptions)
       .then(response => response.text())
       .then(result => {
          console.log(result);
@@ -146,7 +146,7 @@ async function userLogout(event){
     redirect: 'follow'
   };
   
-  fetch(`https://greenbasketdeployment-production.up.railway.app/userlogout/${key}`, logoutRequestOptions)
+  fetch(`http://localhost:8083/userlogout/${key}`, logoutRequestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result);
